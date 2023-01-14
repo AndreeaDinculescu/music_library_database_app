@@ -67,8 +67,8 @@ describe Application do
         expect(response.body).to include('<a href="/artists/2">ABBA</a><br />')
         expect(response.body).to include('<a href="/artists/3">Taylor Swift</a><br />')
         expect(response.body).to include('<a href="/artists/4">Nina Simone</a><br />')
-        end
       end
+    end
 
     context 'GET /artists/id' do
       it 'should return info about first artist' do
@@ -80,16 +80,16 @@ describe Application do
       end
     end
 
-    context 'GET /artists' do
-      it 'should return the list of artists' do
-        response = get('/artists')
+    # context 'GET /artists' do
+    #   it 'should return the list of artists' do
+    #     response = get('/artists')
 
-        expected_response = 'Pixies, ABBA, Taylor Swift, Nina Simone'
+    #     expected_response = 'Pixies, ABBA, Taylor Swift, Nina Simone'
 
-        expect(response.status).to eq(200)
-        expect(response.body).to eq(expected_response)
-      end
-    end
+    #     expect(response.status).to eq(200)
+    #     expect(response.body).to eq(expected_response)
+    #   end
+    # end
 
     context 'POST /artists' do
       it 'should create a new artist' do
